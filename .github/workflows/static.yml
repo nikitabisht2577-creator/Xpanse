@@ -26,20 +26,20 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: expense_tracker/package-lock.json
+          cache-dependency-path: expense_tacker/package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./expense_tracker
+        working-directory: ./expense_tacker
 
       - name: Build
         run: npm run build
-        working-directory: ./expense_tracker
+        working-directory: ./expense_tacker
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./expense_tracker/dist
+          path: ./expense_tacker/dist
 
   deploy:
     needs: build
